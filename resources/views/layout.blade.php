@@ -9,20 +9,12 @@
       <meta name="DC.language" scheme="utf-8" content="vi" />
       <meta name="language" content="Việt Nam">
       
-
-      <link rel="shortcut icon" href="https://www.pngkey.com/png/detail/360-3601772_your-logo-here-your-company-logo-here-png.png" type="image/x-icon" />
       <meta name="revisit-after" content="1 days" />
       <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
       <title>Web-Phim</title>
-      <meta name="description" content="Phim hay 2021 - Xem phim hay nhất, xem phim online miễn phí, phim hot , phim nhanh" />
       <link rel="canonical" href="">
       <link rel="next" href="" />
       <meta property="og:locale" content="vi_VN" />
-      <meta property="og:title" content="Phim hay 2020 - Xem phim hay nhất" />
-      <meta property="og:description" content="Phim hay 2020 - Xem phim hay nhất, phim hay trung quốc, hàn quốc, việt nam, mỹ, hong kong , chiếu rạp" />
-      <meta property="og:url" content="" />
-      <meta property="og:site_name" content="Phim hay 2021- Xem phim hay nhất" />
-      <meta property="og:image" content="" />
       <meta property="og:image:width" content="300" />
       <meta property="og:image:height" content="55" />
       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -38,37 +30,27 @@
          width: 100%;
          }
       </style>
-      <!-- <style>#header .site-title {background: url(https://www.pngkey.com/png/detail/360-3601772_your-logo-here-your-company-logo-here-png.png) no-repeat top left;background-size: contain;text-indent: -9999px;}</style> -->
    </head>
    <body class="home blog halimthemes halimmovies" data-masonry="">
       <header id="header">
          <div class="container">
             <div class="row" id="headwrap">
-               <div class="col-md-3 col-sm-6 slogan">
-                  <p class="site-title"><a class="" href="" title="phim hay ">Phim Hay</p>
-                  </a>
-               </div>
                <div class="col-md-5 col-sm-6 halim-search-form hidden-xs">
                   <div class="header-nav">
-                     <div class="col-xs-12">
+                     <!-- <div class="col-xs-12">
                         <form id="search-form-pc" name="halimForm" role="search" action="" method="GET">
                            <div class="form-group">
-                              <div class="input-group col-xs-12">
-                                 <input id="search" type="text" name="s" class="form-control" placeholder="Tìm kiếm..." autocomplete="off" required>
+                                <div class="input-group col-xs-12"> -->
+                                 <!-- <input id="search" type="text" name="s" class="form-control" placeholder="Tìm kiếm..." autocomplete="off" required>
                                  <i class="animate-spin hl-spin4 hidden"></i>
                               </div>
-                           </div>
+                     </div>   -->
                         </form>
                         <ul class="ui-autocomplete ajax-results hidden"></ul>
                      </div>
                   </div>
                </div>
-               <div class="col-md-4 hidden-xs">
-                  <div id="get-bookmark" class="box-shadow"><i class="hl-bookmark"></i><span> Bookmarks</span><span class="count">0</span></div>
-                  <div id="bookmark-list" class="hidden bookmark-list-on-pc">
-                     <ul style="margin: 0;"></ul>
-                  </div>
-               </div>
+              
             </div>
          </div>
       </header>
@@ -121,9 +103,9 @@
                         
                      </ul>
                   </div>
-                  <ul class="nav navbar-nav navbar-left" style="background:#000;">
+                 <!--  <ul class="nav navbar-nav navbar-left" style="background:#000;">
                      <li><a href="#" onclick="locphim()" style="color: #ffed4d;">Lọc Phim</a></li>
-                  </ul>
+                  </ul> -->
                </div>
             </nav>
             <div class="collapse navbar-collapse" id="search-form">
@@ -160,7 +142,7 @@
      
      
    
-      <style>#overlay_mb{position:fixed;display:none;width:100%;height:100%;top:0;left:0;right:0;bottom:0;background-color:rgba(0, 0, 0, 0.7);z-index:99999;cursor:pointer}#overlay_mb .overlay_mb_content{position:relative;height:100%}.overlay_mb_block{display:inline-block;position:relative}#overlay_mb .overlay_mb_content .overlay_mb_wrapper{width:600px;height:auto;position:relative;left:50%;top:50%;transform:translate(-50%, -50%);text-align:center}#overlay_mb .overlay_mb_content .cls_ov{color:#fff;text-align:center;cursor:pointer;position:absolute;top:5px;right:5px;z-index:999999;font-size:14px;padding:4px 10px;border:1px solid #aeaeae;background-color:rgba(0, 0, 0, 0.7)}#overlay_mb img{position:relative;z-index:999}@media only screen and (max-width: 768px){#overlay_mb .overlay_mb_content .overlay_mb_wrapper{width:400px;top:3%;transform:translate(-50%, 3%)}}@media only screen and (max-width: 400px){#overlay_mb .overlay_mb_content .overlay_mb_wrapper{width:310px;top:3%;transform:translate(-50%, 3%)}}</style>
+      <style>#overlay_mb{position:fixed;display:none;width:100%;height:100%;top:0;left:0;right:0;bottom:0;background-color:black;z-index:99999;cursor:pointer}#overlay_mb .overlay_mb_content{position:relative;height:100%}.overlay_mb_block{display:inline-block;position:relative}#overlay_mb .overlay_mb_content .overlay_mb_wrapper{width:600px;height:auto;position:relative;left:50%;top:50%;transform:translate(-50%, -50%);text-align:center}#overlay_mb .overlay_mb_content .cls_ov{color:#fff;text-align:center;cursor:pointer;position:absolute;top:5px;right:5px;z-index:999999;font-size:14px;padding:4px 10px;border:1px solid #aeaeae;background-color:rgba(0, 0, 0, 0.7)}#overlay_mb img{position:relative;z-index:999}@media only screen and (max-width: 768px){#overlay_mb .overlay_mb_content .overlay_mb_wrapper{width:400px;top:3%;transform:translate(-50%, 3%)}}@media only screen and (max-width: 400px){#overlay_mb .overlay_mb_content .overlay_mb_wrapper{width:310px;top:3%;transform:translate(-50%, 3%)}}</style>
     
       <style>
          #overlay_pc {

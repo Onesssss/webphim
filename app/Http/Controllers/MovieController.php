@@ -15,7 +15,9 @@ class MovieController extends Controller
      */
     public function index()
     {
-        //
+        $list = Movie::with('category','genre','country')->orderBy('id','DESC')->get();//with('category'): Lấy tên hàm từ Movie
+        return view('admincp.movie.index',compact('list'));
+    
     }
 
     /**
@@ -26,8 +28,8 @@ class MovieController extends Controller
         $category = Category::pluck('title','id');// sử dụng hàm pluck để truy vấn dữ liệu từ bảng
         $genre = Genre::pluck('title','id');
         $country = Country::pluck('title','id');
-        $list = Movie::with('category','genre','country')->orderBy('id','DESC')->get();//with('category'): Lấy tên hàm từ Movie
-        return view('admincp.movie.form',compact('list','genre','country','category'));
+
+        return view('admincp.movie.form',compact('genre','country','category'));
     
     }
 
@@ -39,6 +41,7 @@ class MovieController extends Controller
         $data = $request->all();
         $movie = new Movie();
         $movie->title = $data['title'];
+        $movie->firm_hot = $data['firm_hot'];
         $movie->slug = $data['slug'];
         $movie->description = $data['description'];
         $movie->status = $data['status'];
@@ -77,9 +80,8 @@ class MovieController extends Controller
         $category = Category::pluck('title','id');// sử dụng hàm pluck để truy vấn dữ liệu từ bảng
         $genre = Genre::pluck('title','id');
         $country = Country::pluck('title','id');
-        $list = Movie::with('category','genre','country')->orderBy('id','DESC')->get();
         $movie = Movie::find($id);
-        return view('admincp.movie.form',compact('list','genre','country','category','movie'));
+        return view('admincp.movie.form',compact('genre','country','category','movie'));
     }
     /**
      * Update the specified resource in storage.
@@ -89,6 +91,7 @@ class MovieController extends Controller
            $data = $request->all();
         $movie = Movie::find($id);
         $movie->title = $data['title'];
+        $movie->firm_hot = $data['firm_hot'];
         $movie->slug = $data['slug'];  
         $movie->description = $data['description'];
         $movie->status = $data['status'];
