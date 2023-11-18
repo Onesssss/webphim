@@ -1,6 +1,76 @@
 @extends('layouts.app')
 
 @section('content')
+<style type="text/css">
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Định dạng tiêu đề card */
+.card-header {
+    background-color: #3490dc;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+
+/* Định dạng hình ảnh khi người dùng đã đăng nhập */
+.card-body img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Định dạng form đăng nhập */
+.card-body form {
+    margin-top: 20px;
+}
+
+/* Định dạng button đăng nhập */
+.btn-primary {
+    background-color: #3490dc;
+    border-color: #3490dc;
+}
+
+.btn-primary:hover {
+    background-color: #2779bd;
+    border-color: #2779bd;
+}
+
+/* Định dạng link quên mật khẩu */
+.btn-link {
+    color: #3490dc;
+}
+
+.btn-link:hover {
+    text-decoration: underline;   
+}
+body {
+    background-image: url('https://img4.thuthuatphanmem.vn/uploads/2019/12/09/phong-nen-powerpoint-phim-truyen_041236386.jpg');
+    background-size: 100%; /* Đảm bảo hình ảnh nền được hiển thị đầy đủ màn hình */
+    background-position: center; /* Căn giữa hình ảnh nền */
+    background-repeat: no-repeat; /* Không lặp lại hình ảnh nền */
+    background-attachment: fixed; /* Giữ hình ảnh nền tĩnh khi cuộn trang */
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8); /* Tạo một lớp mờ trắng để làm cho văn bản dễ đọc hơn */
+    border-radius: 10px; /* Bo tròn góc của container */
+    padding: 20px; /* Thêm một số lề vào container */
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9); /* Tạo một lớp mờ trắng cho card */
+    border-radius: 15px; /* Bo tròn góc của card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+</style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

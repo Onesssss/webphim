@@ -16,7 +16,28 @@
                            <div class="halim-item">
                               <a class="halim-thumb" href="{{route('movie',$hot->slug)}}" title="{{$hot->title}}">
                                  <figure><img class="lazy img-responsive" src="{{asset('uploads/movie/'.$hot->image)}}" alt="{{$hot->title}}" title="{{$hot->title}}"></figure>
-                                 <span class="status">HD</span><span class="episode"><i class="fa fa-play" aria-hidden="true"></i>Vietsub</span> 
+                                 <span class="status">
+                                     @if($hot->resolution == 0)
+                                        HD
+                                     @elseif($hot->resolution == 1)
+                                       SD
+                                    @elseif($hot->resolution == 2)
+                                       HDCam
+                                      @elseif($hot->resolution == 3)
+                                       Cam
+                                      @elseif($hot->resolution == 4)
+                                        FullHD
+                                      @else
+                                        Trailer
+                                      @endif
+                                 </span>
+                                 <span class="episode"><i class="fa fa-play" aria-hidden="true"></i>
+                                       @if($hot->subtitle == 0)
+                                        Phụ đề
+                                    @else
+                                        Thuyết minh
+                                    @endif
+                                 </span> 
                                  <div class="icon_overlay"></div>
                                  <div class="halim-post-title-box">
                                     <div class="halim-post-title ">
@@ -51,7 +72,28 @@
                         <div class="halim-item">
                            <a class="halim-thumb" href="{{route('movie',$hot->slug)}}">
                               <figure><img class="lazy img-responsive" src="{{asset('uploads/movie/'.$movie->image)}}"  title="{{route('movie',$hot->slug)}}"></figure>
-                              <!-- <span class="status">TẬP 15</span><span class="episode"><i class="fa fa-play" aria-hidden="true"></i>Vietsub</span>  -->
+                               <span class="status"> <!--HD -->
+                                     @if($movie->resolution == 0)
+                                        HD
+                                     @elseif($movie->resolution == 1)
+                                       SD
+                                    @elseif($movie->resolution == 2)
+                                       HDCam
+                                      @elseif($movie->resolution == 3)
+                                       Cam
+                                      @elseif($movie->resolution == 4)
+                                        FullHD
+                                      @else
+                                        Trailer
+                                      @endif
+                                 </span>
+                                 <span class="episode"><i class="fa fa-play" aria-hidden="true"></i><!--sub -->
+                                    @if($movie->subtitle == 0)
+                                        Phụ đề
+                                    @else
+                                        Thuyết minh
+                                    @endif
+                                 </span> 
                               <div class="icon_overlay"></div>
                               <div class="halim-post-title-box">
                                  <div class="halim-post-title ">
@@ -67,9 +109,9 @@
                <div class="clearfix"></div>
               @endforeach
             </main>
-            <aside id="sidebar" class="col-xs-12 col-sm-12 col-md-4">
-               <div id="halim_tab_popular_videos-widget-7" class="widget halim_tab_popular_videos-widget">
-                  <div class="section-bar clearfix">
+  <aside id="sidebar" class="col-xs-12 col-sm-12 col-md-4">
+               <div id="halim_tab_popular_videos-widget-7" class="widget halim_tab_popular_videos-widget"> 
+                   <div class="section-bar clearfix">
                      <div class="section-title">
                         <span>Top Views</span>
                         <ul class="halim-popular-tab" role="tablist">
@@ -87,7 +129,7 @@
                            </li>
                         </ul>
                      </div>
-                  </div>
+                  </div> 
                   <section class="tab-content">
                      <div role="tabpanel" class="tab-pane active halim-ajax-popular-post">
                         <div class="halim-ajax-popular-post-loading hidden"></div>
@@ -96,13 +138,13 @@
                               <a href="chitiet.php" title="">
                                  <div class="item-link">
                                     <img src="" class="lazy post-thumb" alt="" title="" />
-                                    <!-- <span class="is_trailer">Trailer</span> -->
+                                     <span class="is_trailer">Trailer</span>
                                  </div>
                                  <p class="title"></p>
                               </a>
                               <div class="viewsCount" style="color: #9d9d9d;"></div>
                               <div style="float: left;">
-                                 <span class="user-rate-image post-large-rate stars-large-vang" style="display: block;/* width: 100%; */">
+                                 <span class="user-rate-image post-large-rate stars-large-vang" style="display: block;
                                  <span style="width: 0%"></span>
                                  </span>
                               </div>

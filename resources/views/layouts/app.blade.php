@@ -90,6 +90,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    
     <script type="text/javascript">
       function ChangeToSlug()
         {
@@ -136,8 +137,36 @@
         }
 
     </script>
+    
+    <script type="text/javascript">
+    $('.select-movie').change(function(){
+        var id = $(this).val();
+         $.ajax({
+            url:"{{route('select-movie')}}",
+            method:"GET",
+            data:{id:id},
+            success:function(data){
+               $('#show_movie').html(data);
+            }
+        });
+    })
+</script>
+
+    <!-- ajax -->
+<script type="text/javascript">
+    $('.select-year').change(function(){
+        var year = $(this).find(':selected').val();
+        var id_phim = $(this).attr('id');
+        $.ajax({
+            url:"{{url('/update-year-phim')}}",
+            method:"GET",
+            data:{year:year, id_phim:id_phim},
+            success:function(){
+                alert('Thay đổi năm phim '+year+' thành công');
+            }
+        });
+    })
+</script>
 
    </body>
-
-</body>
 </html>

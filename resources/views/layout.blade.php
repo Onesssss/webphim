@@ -9,12 +9,20 @@
       <meta name="DC.language" scheme="utf-8" content="vi" />
       <meta name="language" content="Việt Nam">
       
+
+      <link rel="shortcut icon" href="https://www.pngkey.com/png/detail/360-3601772_your-logo-here-your-company-logo-here-png.png" type="image/x-icon" />
       <meta name="revisit-after" content="1 days" />
       <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
-      <title>Web-Phim</title>
+      <title>Phim hay 2021 - Xem phim hay nhất</title>
+      <meta name="description" content="Phim hay 2021 - Xem phim hay nhất, xem phim online miễn phí, phim hot , phim nhanh" />
       <link rel="canonical" href="">
       <link rel="next" href="" />
       <meta property="og:locale" content="vi_VN" />
+      <meta property="og:title" content="Phim hay 2020 - Xem phim hay nhất" />
+      <meta property="og:description" content="Phim hay 2020 - Xem phim hay nhất, phim hay trung quốc, hàn quốc, việt nam, mỹ, hong kong , chiếu rạp" />
+      <meta property="og:url" content="" />
+      <meta property="og:site_name" content="Phim hay 2021- Xem phim hay nhất" />
+      <meta property="og:image" content="" />
       <meta property="og:image:width" content="300" />
       <meta property="og:image:height" content="55" />
       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -29,30 +37,54 @@
          .textwidget p a img {
          width: 100%;
          }
+
       </style>
+       <style>#header .site-title {background: url(https://www.pngkey.com/png/detail/360-3601772_your-logo-here-your-company-logo-here-png.png) no-repeat top left;background-size: contain;text-indent: -9999px;}</style>
    </head>
    <body class="home blog halimthemes halimmovies" data-masonry="">
       <header id="header">
          <div class="container">
             <div class="row" id="headwrap">
+               <div class="col-md-3 col-sm-6 slogan">
+                  <p class="site-title"><a class="logo" href="" title="phim hay ">Phim Hay</p>
+                  </a>
+               </div>
                <div class="col-md-5 col-sm-6 halim-search-form hidden-xs">
                   <div class="header-nav">
-                     <!-- <div class="col-xs-12">
-                        <form id="search-form-pc" name="halimForm" role="search" action="" method="GET">
-                           <div class="form-group">
-                                <div class="input-group col-xs-12"> -->
-                                 <!-- <input id="search" type="text" name="s" class="form-control" placeholder="Tìm kiếm..." autocomplete="off" required>
-                                 <i class="animate-spin hl-spin4 hidden"></i>
+                     <div class="col-xs-12">
+                           <style type="text/css">
+                              ul#result{
+                                 position: absolute;
+                                 z-index: 9999;
+                                 background: #1b2d3c;
+                                 width: 94%;
+                                 padding: 10px;
+                                 margin: 1px;
+                              }
+                           </style>
+                           <div class="form-group form-timkiem">
+                              <div class="input-group col-xs-12">
+                                 <input type="text" name="search" id="timkiem"  class="form-control" placeholder="Tìm kiếm phim..." autocomplete="off">
+                                 
                               </div>
-                     </div>   -->
-                        </form>
-                        <ul class="ui-autocomplete ajax-results hidden"></ul>
+                           </div>
+                       
+                        <ul class="list-group" id="result" >
+                           
+                        </ul>
+
                      </div>
                   </div>
                </div>
-              
+               <div class="col-md-4 hidden-xs">
+                  <div id="get-bookmark" class="box-shadow"><i class="hl-bookmark"></i><span> Bookmarks</span><span class="count">0</span></div>
+                  <div id="bookmark-list" class="hidden bookmark-list-on-pc">
+                     <ul style="margin: 0;"></ul>
+                  </div>
+               </div>
             </div>
          </div>
+
       </header>
       <div class="navbar-container">
          <div class="container">
@@ -64,9 +96,9 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   </button>
-                  <button type="button" class="navbar-toggle collapsed pull-right expand-search-form" data-toggle="collapse" data-target="#search-form" aria-expanded="false">
+                  <!-- <button type="button" class="navbar-toggle collapsed pull-right expand-search-form" data-toggle="collapse" data-target="#search-form" aria-expanded="false">
                   <span class="hl-search" aria-hidden="true"></span>
-                  </button>
+                  </button> -->
                   <button type="button" class="navbar-toggle collapsed pull-right get-bookmark-on-mobile">
                   Bookmarks<i class="hl-bookmark" aria-hidden="true"></i>
                   <span class="count">0</span>
@@ -82,32 +114,40 @@
                         <li class="mega dropdown">
                            <a title="Thể Loại" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Thể Loại <span class="caret"></span></a>
                            <ul role="menu" class=" dropdown-menu">
-                        @foreach($genre as $key =>$gen)
+                              @foreach($genre as $key => $gen)
                               <li><a title="{{$gen->title}}" href="{{route('genre',$gen->slug)}}">{{$gen->title}}</a></li>
-                        @endforeach
+                              @endforeach
                            </ul>
                         </li>
                         <li class="mega dropdown">
                            <a title="Quốc Gia" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Quốc Gia <span class="caret"></span></a>
                            <ul role="menu" class=" dropdown-menu">
-                        @foreach($country as $key =>$count)
+                              @foreach($country as $key => $count)
                               <li><a title="{{$count->title}}" href="{{route('country',$count->slug)}}">{{$count->title}}</a></li>
-                        @endforeach
+                              @endforeach
                            </ul>
                         </li>
+
+                         <li class="mega dropdown">
+                           <a title="Năm phim" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Năm phim <span class="caret"></span></a>
+                           <ul role="menu" class=" dropdown-menu">
+                        @for($year=2018;$year<=2023;$year++)
+                              <li><a title="{{$year}}" href="{{url('nam/'.$year)}}">{{$year}}</a></li>
+                        @endfor
+                           </ul>
+                        </li>
+
                         @foreach($category as $key => $cate)
                            <li class="mega"><a title="{{$cate->title}}" href="{{route('category',$cate->slug)}}">{{$cate->title}}</a></li>
-                        @endforeach
-
-                        
-                        
+                        @endforeach                  
                      </ul>
                   </div>
-                 <!--  <ul class="nav navbar-nav navbar-left" style="background:#000;">
+                  <ul class="nav navbar-nav navbar-left" style="background:#000;">
                      <li><a href="#" onclick="locphim()" style="color: #ffed4d;">Lọc Phim</a></li>
-                  </ul> -->
+                  </ul> 
                </div>
             </nav>
+
             <div class="collapse navbar-collapse" id="search-form">
                <div id="mobile-search-form" class="halim-search-form"></div>
             </div>
@@ -118,7 +158,6 @@
       </div>
       </div>
       
-      <div class="container">
          <div class="row fullwith-slider"></div>
       </div>
       <div class="container">
@@ -128,20 +167,43 @@
       <footer id="footer" class="clearfix">
          <div class="container footer-columns">
             <div class="row container">
-               
+               <div class="widget about col-xs-12 col-sm-4 col-md-4">
+                  <div class="footer-logo">
+                     <img class="img-responsive" src="https://img.favpng.com/9/23/19/movie-logo-png-favpng-nRr1DmYq3SNYSLN8571CHQTEG.jpg" alt="Phim hay 2021- Xem phim hay nhất" />
+                  </div>
+                  Liên hệ QC: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e5958d8c888d849ccb868aa58288848c89cb868a88">[email&#160;protected]</a>
+               </div>
             </div>
          </div>
       </footer>
       <div id='easy-top'></div>
-     
+
       <script type='text/javascript' src={{asset('js/bootstrap.min.js?ver=5.7.2')}}' id='bootstrap-js'></script>
       <script type='text/javascript' src={{asset('js/owl.carousel.min.js?ver=5.7.2')}}' id='carousel-js'></script>
-     
       <script type='text/javascript' src={{asset('js/halimtheme-core.min.js?ver=1626273138')}}' id='halim-init-js'></script>
-      
-     
-     
-   
+
+
+
+<script type="text/javascript">
+   $(document).ready(function(){
+      $('#timkiem').keyup(function(){
+         $('#result').html(' ');
+         var search = $('#timkiem').val();
+         if(search!='null'){
+            var expression = new RegExp(search, "i");
+            $.getJSON('/public/ajson/movies.json',function(data){
+               $.each(data,function(key,value){
+                  if(value.title.search(expression) != -1 || value.description.search(expression) != -1){
+                     $('#result').append('<li class="list-group-item" style="cursor:pointer">phim da tim</li>')
+                  }
+               });
+            })
+         }
+      })
+   })
+</script>
+        
+
       <style>#overlay_mb{position:fixed;display:none;width:100%;height:100%;top:0;left:0;right:0;bottom:0;background-color:black;z-index:99999;cursor:pointer}#overlay_mb .overlay_mb_content{position:relative;height:100%}.overlay_mb_block{display:inline-block;position:relative}#overlay_mb .overlay_mb_content .overlay_mb_wrapper{width:600px;height:auto;position:relative;left:50%;top:50%;transform:translate(-50%, -50%);text-align:center}#overlay_mb .overlay_mb_content .cls_ov{color:#fff;text-align:center;cursor:pointer;position:absolute;top:5px;right:5px;z-index:999999;font-size:14px;padding:4px 10px;border:1px solid #aeaeae;background-color:rgba(0, 0, 0, 0.7)}#overlay_mb img{position:relative;z-index:999}@media only screen and (max-width: 768px){#overlay_mb .overlay_mb_content .overlay_mb_wrapper{width:400px;top:3%;transform:translate(-50%, 3%)}}@media only screen and (max-width: 400px){#overlay_mb .overlay_mb_content .overlay_mb_wrapper{width:310px;top:3%;transform:translate(-50%, 3%)}}</style>
     
       <style>
@@ -206,6 +268,7 @@
          transform: translate(-50%, 3%);
          }
          }
+
       </style>
      
       <style>
@@ -216,5 +279,7 @@
          span.bannermobi2 img {height: 70px;width: 300px;}
          #hide_float_right a { background: #01AEF0; padding: 5px 5px 1px 5px; color: #FFF;float: left;}
       </style>
+   
+     
    </body>
 </html>

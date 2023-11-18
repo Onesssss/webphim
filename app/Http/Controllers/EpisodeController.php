@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Movie;
+use App\Models\Episode;
+use Carbon\Carbon;
 class EpisodeController extends Controller
 {
     /**
@@ -11,7 +13,9 @@ class EpisodeController extends Controller
      */
     public function index()
     {
-        //
+        $list_episode = Episode::with('movie')->orderBy('movie_id','DESC')->get();
+        return view('admincp.episode.index',compact('list_episode'));
+        
     }
 
     /**
@@ -19,7 +23,8 @@ class EpisodeController extends Controller
      */
     public function create()
     {
-        //
+        $list_movie = Movie::orderBy('id','DESC')->pluck('title','id');
+        return view('admincp.episode.form',compact('list_movie'));
     }
 
     /**
@@ -27,7 +32,15 @@ class EpisodeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $data = $request->all();  // trích xuất tất cả dữ liệu gửi từ yêu cầu và lưu vào biến $data. 
+        $episode = new Episode();
+        $episode->movie_id = $data['movie_id'];
+        $episode->linkphim = $data['link'];
+        $episode->episode = $data['episode'];
+        $episode->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
+        $episode->created_at = Carbon::now('Asia/Ho_Chi_Minh');
+        $episode->save();
+        return redirect()->back(); //được sử dụng để chuyển hướng người dùng sau khi dữ liệu đã được lưu thành công
     }
 
     /**
@@ -43,7 +56,9 @@ class EpisodeController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $list_movie = Movie::orderBy('id','DESC')->pluck('title','id');
+        $episode = Episode::find($id);
+        return view('admincp.episode.form',compact('episode','list_movie'));
     }
 
     /**
@@ -51,7 +66,15 @@ class EpisodeController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+         $data = $request->all();  // trích xuất tất cả dữ liệu gửi từ yêu cầu và lưu vào biến $data. 
+        $episode =  Episode::find($id);
+        $episode->movie_id = $data['movie_id'];
+        $episode->linkphim = $data['link'];
+        $episode->episode = $data['episode'];
+        $episode->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
+        $episode->created_at = Carbon::now('Asia/Ho_Chi_Minh');
+        $episode->save();
+        return redirect()->route('episode.index');; //được sử dụng để chuyển hướng người dùng sau khi dữ liệu đã được lưu thành công
     }
 
     /**
@@ -60,5 +83,15 @@ class EpisodeController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+    public function select_movie(){
+        $id= $_GET['id'];
+        $movie = Movie::find($id);
+        $output = '<option>---Chọn tập phim----</option>';
+        for($i=1 ;$i<= $movie->episode; $i++){
+            $output.= '<option value="'. $i .'">'.$i.'</option>';
+            
+        }
+        echo $output;
     }
 }

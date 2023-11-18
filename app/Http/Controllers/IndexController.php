@@ -8,13 +8,14 @@ use App\Models\Genre;
 use App\Models\Country;
 use App\Models\Movie;
 use App\Models\Episode;
+use App\Models\Movie_Genre;
 use DB;
 
 
 class IndexController extends Controller
 {
     public function home(){
-        $firm_hot = Movie:: where('firm_hot',1)->where('status',1)->get();
+        $firm_hot = Movie:: where('firm_hot',1)->where('status',1)->orderBy('ngaycapnhat','DESC')->get();
         $category = Category::orderBy('id','DESC')->where('status',1)->get();
         $genre = Genre::orderBy('id','DESC')->get();
         $country = Country::orderBy('id','DESC')->get();
@@ -34,7 +35,13 @@ class IndexController extends Controller
         $genre = Genre::orderBy('id','DESC')->get();
         $country = Country::orderBy('id','DESC')->get();
         $genre_slug = Genre::where('slug',$slug)->first();
-        $movie = Movie::where('genre_id',$genre_slug->id)->paginate(5);
+        //Show ra nhiều thể loại
+        $movie_genre = Movie_Genre::where('genre_id',$genre_slug->id)->get();
+        $many_genre = [];
+        foreach($movie_genre as $key => $mov){
+            $many_genre[] = $mov->movie_id;
+        }
+        $movie = Movie::whereIn('id',$many_genre)->paginate(5);
         return view('pages.genre',compact('category','genre','country','genre_slug','movie'));
     }
     public function country($slug){
@@ -49,12 +56,25 @@ class IndexController extends Controller
          $category = Category::orderBy('id','DESC')->where('status',1)->get();
         $genre = Genre::orderBy('id','DESC')->get();
         $country = Country::orderBy('id','DESC')->get();
-        $movie = Movie::with('category','genre','country')->where('slug',$slug)->where('status',1)->first();
+        $movie = Movie::with('category','genre','country','movie_genre')->where('slug',$slug)->where('status',1)->first();
         $movie_lienquan = Movie::with('category','genre','country')->where('category_id',$movie->category->id)->orderBy(DB::raw('RAND()'))->whereNotIn('slug',[$slug])->get();
         return view('pages.movie',compact('category','genre','country','movie','movie_lienquan'));
     }
-    public function watch(){
-        return view('pages.watch');
+     public function year($year){
+        $category = Category::orderBy('id','DESC')->where('status',1)->get();
+        $genre = Genre::orderBy('id','DESC')->get();
+        $country = Country::orderBy('id','DESC')->get();
+        $year = $year;
+        $movie = Movie::where('year',$year)->paginate(5);
+        return view('pages.year',compact('category','genre','country','year','movie'));
+    }
+    public function watch($slug){
+        $category = Category::orderBy('id','DESC')->where('status',1)->get();
+        $genre = Genre::orderBy('id','DESC')->get();
+        $country = Country::orderBy('id','DESC')->get();
+
+        $movie = Movie::with('category','genre','country','movie_genre')->where('slug',$slug)->where('status',1)->first();
+        return view('pages.watch',compact('category','genre','country','movie'));
     }
     public function episode(){
         return view('pages.episode');
