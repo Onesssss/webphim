@@ -13,15 +13,8 @@
       <link rel="shortcut icon" href="https://www.pngkey.com/png/detail/360-3601772_your-logo-here-your-company-logo-here-png.png" type="image/x-icon" />
       <meta name="revisit-after" content="1 days" />
       <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
-      <title>Phim hay 2021 - Xem phim hay nhất</title>
-      <meta name="description" content="Phim hay 2021 - Xem phim hay nhất, xem phim online miễn phí, phim hot , phim nhanh" />
-      <link rel="canonical" href="">
-      <link rel="next" href="" />
-      <meta property="og:locale" content="vi_VN" />
-      <meta property="og:title" content="Phim hay 2020 - Xem phim hay nhất" />
-      <meta property="og:description" content="Phim hay 2020 - Xem phim hay nhất, phim hay trung quốc, hàn quốc, việt nam, mỹ, hong kong , chiếu rạp" />
-      <meta property="og:url" content="" />
-      <meta property="og:site_name" content="Phim hay 2021- Xem phim hay nhất" />
+      <title>Phim 2023</title>
+  
       <meta property="og:image" content="" />
       <meta property="og:image:width" content="300" />
       <meta property="og:image:height" content="55" />
@@ -39,7 +32,7 @@
          }
 
       </style>
-       <style>#header .site-title {background: url(https://www.pngkey.com/png/detail/360-3601772_your-logo-here-your-company-logo-here-png.png) no-repeat top left;background-size: contain;text-indent: -9999px;}</style>
+       
    </head>
    <body class="home blog halimthemes halimmovies" data-masonry="">
       <header id="header">
@@ -52,16 +45,7 @@
                <div class="col-md-5 col-sm-6 halim-search-form hidden-xs">
                   <div class="header-nav">
                      <div class="col-xs-12">
-                           <style type="text/css">
-                              ul#result{
-                                 position: absolute;
-                                 z-index: 9999;
-                                 background: #1b2d3c;
-                                 width: 94%;
-                                 padding: 10px;
-                                 margin: 1px;
-                              }
-                           </style>
+                           
                            <div class="form-group form-timkiem">
                               <div class="input-group col-xs-12">
                                  <input type="text" name="search" id="timkiem"  class="form-control" placeholder="Tìm kiếm phim..." autocomplete="off">
@@ -77,7 +61,6 @@
                   </div>
                </div>
                <div class="col-md-4 hidden-xs">
-                  <div id="get-bookmark" class="box-shadow"><i class="hl-bookmark"></i><span> Bookmarks</span><span class="count">0</span></div>
                   <div id="bookmark-list" class="hidden bookmark-list-on-pc">
                      <ul style="margin: 0;"></ul>
                   </div>
@@ -142,9 +125,7 @@
                         @endforeach                  
                      </ul>
                   </div>
-                  <ul class="nav navbar-nav navbar-left" style="background:#000;">
-                     <li><a href="#" onclick="locphim()" style="color: #ffed4d;">Lọc Phim</a></li>
-                  </ul> 
+                   
                </div>
             </nav>
 
@@ -168,10 +149,7 @@
          <div class="container footer-columns">
             <div class="row container">
                <div class="widget about col-xs-12 col-sm-4 col-md-4">
-                  <div class="footer-logo">
-                     <img class="img-responsive" src="https://img.favpng.com/9/23/19/movie-logo-png-favpng-nRr1DmYq3SNYSLN8571CHQTEG.jpg" alt="Phim hay 2021- Xem phim hay nhất" />
-                  </div>
-                  Liên hệ QC: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e5958d8c888d849ccb868aa58288848c89cb868a88">[email&#160;protected]</a>
+                  
                </div>
             </div>
          </div>

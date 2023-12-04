@@ -58,7 +58,8 @@ class IndexController extends Controller
         $country = Country::orderBy('id','DESC')->get();
         $movie = Movie::with('category','genre','country','movie_genre')->where('slug',$slug)->where('status',1)->first();
         $movie_lienquan = Movie::with('category','genre','country')->where('category_id',$movie->category->id)->orderBy(DB::raw('RAND()'))->whereNotIn('slug',[$slug])->get();
-        return view('pages.movie',compact('category','genre','country','movie','movie_lienquan'));
+        $episode = Episode::with('movie')->where('movie_id',$movie->id)->orderBy('episode','DESC')->take(2)->get();
+        return view('pages.movie',compact('category','genre','country','movie','movie_lienquan','episode'));
     }
      public function year($year){
         $category = Category::orderBy('id','DESC')->where('status',1)->get();
@@ -72,8 +73,9 @@ class IndexController extends Controller
         $category = Category::orderBy('id','DESC')->where('status',1)->get();
         $genre = Genre::orderBy('id','DESC')->get();
         $country = Country::orderBy('id','DESC')->get();
+        $movie = Movie::with('category','genre','country','movie_genre','episode')->where('slug',$slug)->where('status',1)->first();
 
-        $movie = Movie::with('category','genre','country','movie_genre')->where('slug',$slug)->where('status',1)->first();
+             // return response()->json($movie);
         return view('pages.watch',compact('category','genre','country','movie'));
     }
     public function episode(){

@@ -74,7 +74,7 @@ class EpisodeController extends Controller
         $episode->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
         $episode->created_at = Carbon::now('Asia/Ho_Chi_Minh');
         $episode->save();
-        return redirect()->route('episode.index');; //được sử dụng để chuyển hướng người dùng sau khi dữ liệu đã được lưu thành công
+        return redirect()->to('episode');; //được sử dụng để chuyển hướng người dùng sau khi dữ liệu đã được lưu thành công
     }
 
     /**
@@ -82,7 +82,8 @@ class EpisodeController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $episode = Episode::find($id)->delete();
+        return redirect()->route('episode.index');;
     }
     public function select_movie(){
         $id= $_GET['id'];

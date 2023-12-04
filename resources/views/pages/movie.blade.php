@@ -25,8 +25,8 @@
                               <img class="movie-thumb" src="{{asset('uploads/movie/'.$movie->image)}}" alt="{{$movie->title}}">
                               @if($movie->resolution != 5)
                               <div class="bwa-content">
-                                 <div class="loade"></div>
-                                 <a href="{{route('watch',[$movie->slug])}}" class="bwac-btn">
+                                 <div class="loader"></div>
+                                 <a href="{{route('watch',['slug'=>$movie->slug])}}" class="bwac-btn">
                                  <i class="fa fa-play"></i>
                                  </a>
                               </div>
@@ -66,10 +66,15 @@
                                      @foreach($movie->movie_genre as $gen)
                                           <a href="{{route('genre',$gen->slug)}}" >{{$gen->title}}</a>
                                      @endforeach
-                                    <!-- <a href="{{route('genre',$movie->genre->slug)}}" >{{$movie->genre->title}}</a> -->
+                                  
                                  </li>
                                  <li class="list-info-group-item"><span>Danh mục phim</span>:<a href="{{route('category',$movie->category->slug)}}" >{{$movie->category->title}}</a></li>
                                  <li class="list-info-group-item"><span>Quốc gia</span> : <a href="{{route('country',$movie->country->slug)}}">{{$movie->country->title}}</a></li>
+                                 <li class="list-info-group-item"><span>Tập phim mới nhất</span> : 
+                                    @foreach($episode as $key=>$episode)
+                                    <a href="{{route('watch',['slug'=>$episode->movie->slug])}}">Tập {{$episode->episode}}</a>
+                                    @endforeach
+                                 </li>
                               </ul>
                               <div class="movie-trailer hidden"></div>
                            </div>
@@ -84,8 +89,8 @@
                      <div class="entry-content htmlwrap clearfix">
                         <div class="video-item halim-entry-box">
                            <article id="post-38424" class="item-content">
-                              Phim <a href="{{route('category',$movie->category->slug)}}">{{$movie->title}}</a> {{$movie->country->title}} :
-                              <p>{{$movie->title}} &#8211; {{$movie->description}}</p>
+                              Phim <a href="{{ route('category', ['slug' => $movie->category->slug, 'tap-phim' => $movie]) }}">
+                               {{ $movie->title }}</a>{{$movie->country->title}} :<p>{{$movie->title}} &#8211; {{$movie->description}}</p>
                       
                            </article>
                         </div>

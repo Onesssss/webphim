@@ -41,12 +41,21 @@
                                                         <!--  if,else rút gọn  -->
                         </div>
 
+                        @if(isset($episode))
                         <div class="form-group">
                         {!! Form::label('episode', 'Tập Phim', []) !!}
                         {!! Form::text('episode', isset($episode) ? $episode->episode : '', ['class'=>'form-control','placeholder'=>'nhập dữ liệu...',isset($episode)?'readonly': '']) !!}
                                                         <!--  if,else rút gọn  -->
                         </div>
+                        @else
+                         <div class="form-group">
+                            {!! Form::label('episode', 'Tập Phim', []) !!}
+                            <select name="episode" class="form-control" id="show_movie"></select>
                         
+                                                        <!--  if,else rút gọn  -->
+                        </div>
+                        @endif
+
                         @if(!isset($episode))
                             {!! Form::submit('Thêm tập phim', ['class'=>'btn btn-success']) !!}
                         @else

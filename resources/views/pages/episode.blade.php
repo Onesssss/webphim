@@ -6,7 +6,7 @@
             <div class="panel-heading">
                <div class="row">
                   <div class="col-xs-6">
-                     <div class="yoast_breadcrumb hidden-xs"><span><span><a href="">Phim hay</a> » <span><a href="danhmuc.php">Trung Quốc</a> » <span class="breadcrumb_last" aria-current="page">Tôi Và Chúng Ta Ở Bên Nhau</span></span></span></span></div>
+                     <div class="yoast_breadcrumb hidden-xs"><span><span><a href="">{{$movie->title}}</a> » <span><a href="">{{$movie->country->title}}</a> » <span class="breadcrumb_last" aria-current="page">{{$movie->title}}</span></span></span></span></div>
                   </div>
                </div>
             </div>
